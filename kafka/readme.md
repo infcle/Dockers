@@ -1,0 +1,3 @@
+#variables de entorno
+
+DB_PASSWORD=ye8Lcezujldlwrlxeros;DB_SCHEMA=public;DB_URL=jdbc:postgresql://localhost:5434/kbi_contabilidad_db;DB_USERNAME=dbusr;KAFKA_BROKER_01=kafka:9092;KAFKA_BROKER_02=kafka:9092;KAFKA_BROKER_03=kafka:9092;KAFKA_SCHEMA_REGISTRY=http://schema-registry:18081;KBI_APP_DESCRIPTION=CONTABILIDAD Envrionment;KBI_APP_SERVER_DESCRIPTION=Descripcion;KBI_APP_TITLE=CONTABILIDAD API;KBI_APP_VERSION=v1;LOGGING_LEVEL=info;MC_URL=http://localhost:8083;SERVER_PORT=8081;SERVER_URL=http://localhost:8081
