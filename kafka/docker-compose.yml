@@ -33,5 +33,23 @@ services:
       # Aquí puedes agregar más configuraciones de Schema Registry según tus necesidades
     depends_on:
       - kafka
-
+  kafka-connect:
+    image: debezium/connect:1.7
+    container_name: kafka-connect
+    ports:
+      - "8083:8083"
+    environment:
+      BOOTSTRAP_SERVERS: kafka:9092
+      GROUP_ID: 1
+      CONFIG_STORAGE_TOPIC: "connect-configs"
+      OFFSET_STORAGE_TOPIC: "connect-offsets"
+      STATUS_STORAGE_TOPIC: "connect-status"
+      OFFSET_FLUSH_INTERVAL_MS: 10000
+      CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: 1
+      CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: 1
+      CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: 1
+    depends_on:
+      - kafka
+    links:
+      - kafka
   # Puedes agregar más servicios aquí para tus propios brokers de Kafka adicionales, si es necesario
